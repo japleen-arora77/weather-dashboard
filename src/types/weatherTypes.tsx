@@ -17,6 +17,7 @@ export interface forecastDay {
         icon: string;             // icon URL
         sunrise: string;
         sunset: string;
+        dayLength:string;
         hour: {
           time: string;
           temp_c: number;
