@@ -1,0 +1,73 @@
+.head{
+    color: var(--mainTextColor);
+} 
+.sub-head{
+    color: var(--extraTextColor);
+}
+.today-weather{
+    background-color: var(--elemBgColor);
+    border-radius: 40px;
+}
+.city-name{
+    background-color: var(--iconColor);
+    border-radius: 40px;
+}
+.today-highlight{
+    background: radial-gradient(
+        circle,
+        rgba(22, 40, 80, 0.6) 0%,
+        rgba(22, 39, 77, 0.6) 0%,
+        rgba(22, 39, 76, 0.6) 7%,
+        rgba(21, 38, 74, 0.6) 17%,
+        rgba(18, 26, 45, 0.6) 100%
+      );
+    border-radius: 40px;
+    
+}
+.highlight{
+
+
+}
+
+
+
+
+
+
+
+/*Forecast weather section*/
+.forecast{
+    background-color: var(--elemBgColor);
+    border-radius: 40px;
+}
+.day-length{
+    background-color: var(--iconColor);
+    border-radius:25px ;
+    
+}
+.today-forecast{
+    background: radial-gradient(
+        circle,
+        rgba(22, 40, 80, 0.6) 0%,
+        rgba(22, 39, 77, 0.6) 0%,
+        rgba(22, 39, 76, 0.6) 7%,
+        rgba(21, 38, 74, 0.6) 17%,
+        rgba(18, 26, 45, 0.6) 100%
+      );
+    border-radius: 25px;
+}
+.further-days-forecast{
+    background: radial-gradient(
+        circle,
+        rgba(22, 40, 80, 0.6) 0%,
+        rgba(22, 39, 77, 0.6) 0%,
+        rgba(22, 39, 76, 0.6) 7%,
+        rgba(21, 38, 74, 0.6) 17%,
+        rgba(18, 26, 45, 0.6) 100%
+      );
+    border-radius: 25px;
+}
+.other-city-data{
+    background-color: var(--elemBgColor);
+    border-radius: 25px;
+}

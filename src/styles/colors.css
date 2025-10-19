@@ -1,0 +1,14 @@
+:root {
+    --bgColor:#081a2e;
+    --mainTextColor:#ffffff;
+    --extraTextColor:#f5ebeb;
+    --elemBgColor:#202d4a;
+    --iconColor:#8d3efa;
+}
+body.light-mode {
+    --bgColor: #ddddf5;
+    --mainTextColor: #1b1b24;
+    --extraTextColor: #2f2f3b;
+    --elemBgColor: #d0d0f8;
+    --iconColor:#8bcaf7;
+  }

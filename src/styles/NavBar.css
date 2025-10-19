@@ -1,0 +1,66 @@
+.searchbar {
+    background-color: var(--elemBgColor); /* dark background */
+    border-radius: 40px;
+    overflow: hidden;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+.search-icon {
+    background: transparent;
+    border: none;
+    color: var(--extraTextColor); /* icon color */
+    font-size: 18px;
+    padding-left: 15px;
+  }
+.search-input {
+    background-color: var(--elemBgColor);
+    border: none;
+    padding: 12px;
+    font-size: 16px; 
+  }
+.search-input::placeholder {
+    color: var(--extraTextColor);
+  }
+.search-input:focus {
+  background-color: var(--elemBgColor);
+  color: var(--extraTextColor);    
+    box-shadow: none;
+  }
+  .toggle-btn{
+  width: 70px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: var(--elemBgColor);
+  background-color: var(--iconColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  }
+  .toggle-btn .moon,
+.toggle-btn .sun {
+  font-size: 1.2rem;
+  /* color: var(--iconColor); */
+  z-index: 2;
+}
+.toggle-circle {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--mainTextColor);
+  top: 3.5px;
+  left: 4px;
+  transition: all 0.4s ease;
+}
+.toggle-btn.light .toggle-circle {
+  left: calc(100% - 32px);
+  background-color: var(--mainTextColor);
+}
+  .toggle-btn:hover {
+    background-color: var(--iconColor);
+  }
+  
