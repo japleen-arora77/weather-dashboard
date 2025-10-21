@@ -1,3 +1,4 @@
+
 .searchbar {
     background-color: var(--elemBgColor); /* dark background */
     border-radius: 40px;
@@ -63,4 +64,4 @@
   .toggle-btn:hover {
     background-color: var(--iconColor);
   }
-  
+

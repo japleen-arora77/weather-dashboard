@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="main-page text-center ">
-      <NavBar/>
+      <NavBar onSearch={(city)=>setLocation}/>
       <h1 className='h1-type head'>🌤️ Weather Dashboard</h1>
       <p className="sub-head">Last updated: {new Date().toLocaleString()}</p>
       <hr/>

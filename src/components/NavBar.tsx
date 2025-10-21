@@ -1,20 +1,45 @@
-import { Form, InputGroup } from "react-bootstrap";
+import { Form, InputGroup, ListGroup } from "react-bootstrap";
 //import { FaSearch as FaSearchIcon } from "react-icons/fa";
 import { useState, ChangeEvent, useEffect} from "react";
 import "../styles/NavBar.css";
 
-interface SearchBarProps {
+interface NavBarProps {
   onSearch: (city: string) => void;
 }
+//const apiKeyOfSearching="OPEN_WEATHER_API_KEY";
 
-const NavBar: React.FC = () => { 
-  // Type the state as string
+const NavBar: React.FC<NavBarProps> = ({onSearch}) => {
   const [searchItem, setSearchItem] = useState<string>("");
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true); //dark mode default
-  // Type the event parameter for TypeScript
-  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+ // const [searchSuggestions, setSearchSuggestions] = useState<any[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true); 
+  const handleSearchChange =async (e: ChangeEvent<HTMLInputElement>) => {
     setSearchItem(e.target.value);
+    // if(loc.length>1){
+    //   try{
+    //       const res=await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=5&appid=${apiKeyOfSearching}`);
+    //       const data=await res.json();
+    //       setSearchSuggestions(data);
+    //   }
+    //   catch(err){
+    //     console.error("Error while fetching suggestions",err)
+    //   }
+    // }
+    // else{
+    //   setSearchSuggestions([]);
+    // }
   };
+  const handleKeyPress=(e:React.KeyboardEvent<HTMLInputElement>)=>{
+    if(e.key==="Enter" && searchItem.trim()!==""){
+        onSearch(searchItem.trim());
+        setSearchItem("");
+    }
+  };
+  // const handleSuggestionClick = (city: string) => {
+  //   setSearchItem(city);
+  //   onSearch(city);
+  //   setSearchSuggestions([]);
+  // };
+
   const toggleTheme=()=>{
     setIsDarkMode((prev)=>!prev);
   };
@@ -27,6 +52,7 @@ const NavBar: React.FC = () => {
       <div className="row align-items-center">
         {/* Search bar */}
         <div className="col-lg-8 head">
+          <div className="search-wrap position-relative">
           <InputGroup className="searchbar ">
             <InputGroup.Text className="search-icon">
             <i className="bi bi-search"></i>
@@ -36,10 +62,36 @@ const NavBar: React.FC = () => {
               placeholder="Search City..."
               value={searchItem}
               onChange={handleSearchChange}
+              onKeyDown={handleKeyPress}
               className="search-input"
             />
-          </InputGroup>
+          </InputGroup> 
+            {/* Dropdown suggestions */}
+           {/* {searchSuggestions.length > 0 && (
+            <ListGroup className="suggestion-dropdown shadow-sm">
+              {searchSuggestions.map((sugg, index) => (
+                <ListGroup.Item
+                  key={index}
+                  action
+                  onClick={() =>
+                    handleSuggestionClick(
+                      `${sugg.name}, ${sugg.state ? sugg.state + ", " : ""}${
+                        sugg.country
+                      }`
+                    )
+                  }
+                >
+                  <strong>{sugg.name}</strong>
+                  {sugg.state ? `, ${sugg.state}` : ""}{" "}
+                  <span className="text-muted">({sugg.country})</span>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          )} */}
+          </div>
         </div>
+
+        
 
         {/* Light/Dark mode toggle placeholder */}
         <div className="col-lg-4 head text-end">
@@ -50,10 +102,6 @@ const NavBar: React.FC = () => {
               }
               `}
             onClick={toggleTheme}>
-            {/* <i className={`bi ${
-              isDarkMode ? "bi-sun-fill" : "bi-moon-fill"
-            }`}
-            ></i> */}
             <i className="bi bi-moon-fill moon"></i>
     <div className="toggle-circle"></div>
     <i className="bi bi-sun-fill sun"></i>

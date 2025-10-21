@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { forecastDay, weatherData } from "../types/weatherTypes";
 import getWeather from "../api/weatherAPI"; 
 
-interface ForecastProps{
+interface ForecastProps{ 
     forecast : forecastDay[];
 }
 const otherCities=["Vancouver","Melbourne","Delhi","Bangalore","Pune","New York" ];

@@ -25,8 +25,8 @@
     
 }
 .highlight{
-
-
+    background-color: var(--bgColor);
+    border-radius: 20px;
 }
 
 

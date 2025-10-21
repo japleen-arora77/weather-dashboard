@@ -21,11 +21,11 @@ const WeatherCard: React.FC<WeatherCardProps> = ({data}) => {
                             </div>
                             <div className="col-lg-6 d-flex align-items-center justify-content-center">
                             <img
-                    src={data.icon}
-                    alt="weather icon"
-                    className="icon-type"
-                    style={{ width: '120px', height: '120px' }}
-                  />
+                                src={data.icon}
+                                alt="weather icon"
+                                className="icon-type"
+                                style={{ width: '120px', height: '120px' }}
+                            />
                             </div>
                         </div>
                         </div>
@@ -33,19 +33,19 @@ const WeatherCard: React.FC<WeatherCardProps> = ({data}) => {
                     <div className="col-lg-5  text-start">
                         <div className='today-highlight p-4'>
                         <h3 className="h3-type head">Today's Highlight</h3>
-                        <div className="row ">
-                            <div className="col-lg-6 head highlight">
+                        <div className="row m-3 ">
+                            <div className="col-lg-6 head highlight p-2">
                                 Chance of Rain<br/> {data.rainChance}%
                             </div>
-                            <div className="col-lg-6 head highlight">
+                            <div className="col-lg-6 head highlight p-2">
                                 UV Index<br/> {data.uvIdx}
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-lg-6 head highlight">
+                        <div className="row m-3">
+                            <div className="col-lg-6 head highlight p-2">
                                 Wind Speed<br/>{data.windSpeed}km/h
                             </div>
-                            <div className="col-lg-6 head highlight">
+                            <div className="col-lg-6 head highlight p-2">
                                 Humidity<br/>{data.humidity}%
                             </div>
                         </div>
