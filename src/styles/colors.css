@@ -6,7 +6,7 @@
     --iconColor:#8d3efa;
 }
 body.light-mode {
-    --bgColor: #ddddf5;
+    --bgColor: #ddddf5; 
     --mainTextColor: #1b1b24;
     --extraTextColor: #2f2f3b;
     --elemBgColor: #d0d0f8;

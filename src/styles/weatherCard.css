@@ -10,8 +10,36 @@
 }
 .city-name{
     background-color: var(--iconColor);
+    color: var(--mainTextColor);
     border-radius: 40px;
 }
+.city-name:hover{
+    background-color: var(--iconColor);
+    color: var(--mainTextColor);
+}
+/* Keep weather icon always on the right side */
+@media (max-width: 992px) {
+    .today-weather .row {
+      flex-wrap: nowrap !important;     /* prevent icon from going below */
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .today-weather .col-lg-6 {
+      flex: 1 1 50% !important;         /* equal space */
+      max-width: 50% !important;
+    }
+  
+    .icon-type {
+      text-align: right !important;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  
 .today-highlight{
     background: radial-gradient(
         circle,
@@ -22,11 +50,17 @@
         rgba(18, 26, 45, 0.6) 100%
       );
     border-radius: 40px;
-    
 }
 .highlight{
     background-color: var(--bgColor);
-    border-radius: 20px;
+  border-radius: 20px;
+  padding: 1rem;               /* ensures content inside */
+  text-align: center;          /* centers text & emojis */
+  min-height: 110px;           /* keeps boxes even height */
+  display: flex;               /* centers content vertically */
+  flex-direction: column;
+  justify-content: center;
+   
 }
 
 

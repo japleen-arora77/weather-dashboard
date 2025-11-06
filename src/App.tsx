@@ -7,6 +7,7 @@ import { weatherData, forecastDay } from "./types/weatherTypes";
 import  NavBar  from './components/NavBar';
 import WeatherCard from "./components/weatherCard";
 import ForecastCard from './components/forecastCard';
+import Footer from './components/footer';
 import './App.css';
 import getWeather from './api/weatherAPI';
 
@@ -34,12 +35,12 @@ function App() {
 
   return (
     <div className="main-page text-center ">
-      <NavBar onSearch={(city)=>setLocation}/>
+      <NavBar onSearch={(city)=>setLocation(city)}/>
       <h1 className='h1-type head'>🌤️ Weather Dashboard</h1>
       <p className="sub-head">Last updated: {new Date().toLocaleString()}</p>
-      <hr/>
       {weather && <WeatherCard data={weather} />}
       {forecast.length > 0 && <ForecastCard forecast={forecast} />}
+       <Footer />
     </div>
   );
 }

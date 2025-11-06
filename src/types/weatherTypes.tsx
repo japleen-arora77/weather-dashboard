@@ -6,7 +6,8 @@ export interface weatherData {
     uvIdx:number;
     humidity:number;
     windSpeed:number;
-    icon:string;
+    icon?:string;
+    isDay?:boolean;
 }
 
 export interface forecastDay {

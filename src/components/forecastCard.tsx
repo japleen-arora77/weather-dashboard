@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { forecastDay, weatherData } from "../types/weatherTypes";
 import getWeather from "../api/weatherAPI"; 
+import getWeatherEmoji from "../utils/getWeatherEmoji";
 
 interface ForecastProps{ 
     forecast : forecastDay[];
@@ -22,7 +23,7 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
         };
         fetchOtherCities();
     })
-
+    const isDay = new Date().getHours() >= 6 && new Date().getHours() < 18;
     return(
         <div className="forecast-card container ">
             <div className="forecast-card-body p-4">
@@ -69,11 +70,14 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                                         })()}
                                      </p>
                                       <p>
-                                        <img
+                                        {/* <img
                                           src={hourData.condition.icon}
                                           alt={hourData.condition.text}
                                          width="40"
-                                        />
+                                        /> */}
+                                        <h1 style={{ fontSize: "1.4rem" }}>
+                                            {getWeatherEmoji(hourData.condition.text, isDay)}
+                                        </h1>
                                       </p>
                                       <p className="sub-head">
                                         {Math.round(hourData.temp_c)}°C
@@ -90,7 +94,9 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                                             <p className="sub-head">{forecast[1]?.desc}</p>
                                         </div>
                                         <div className="col-lg-4">
-                                            <h1><img src={forecast[1]?.icon} alt={forecast[1]?.desc} width="60"/></h1>
+                                        <h1 style={{ fontSize: "2rem" }}>
+                                            {getWeatherEmoji(forecast[1]?.desc, isDay)}
+                                        </h1>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +131,9 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                               <p className="sub-head">{city.city}</p>
                             </div>
                             <div className="col-lg-5 head">
-                              <img src={city.icon} alt={city.desc} width="40" />
+                            <h1 style={{ fontSize: "1.8rem" }}>
+                              {getWeatherEmoji(city.desc, isDay)}
+                            </h1>
                             </div>
                           </div>
                         </div>
@@ -142,7 +150,9 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                               <p className="sub-head">{city.city}</p>
                             </div>
                             <div className="col-lg-5 head">
-                              <img src={city.icon} alt={city.desc} width="40" />
+                            <h1 style={{ fontSize: "1.8rem" }}>
+                              {getWeatherEmoji(city.desc, isDay)}
+                            </h1>
                             </div>
                           </div>
                         </div>
@@ -151,7 +161,7 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                   </div>
                   <div className="row p-3">
                     {otherCitiesWeather.slice(4, 6).map((city, index) => (
-                      <div key={index} className="col-lg-6">
+                      <div key={index} className="col-lg-6"> 
                         <div className="other-city-data p-3">
                           <div className="row">
                             <div className="col-lg-7">
@@ -159,7 +169,9 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                               <p className="sub-head">{city.city}</p>
                             </div>
                             <div className="col-lg-5 head">
-                              <img src={city.icon} alt={city.desc} width="40" />
+                            <h1 style={{ fontSize: "1.8rem" }}>
+                              {getWeatherEmoji(city.desc, isDay)}
+                            </h1>
                             </div>
                           </div>
                         </div>

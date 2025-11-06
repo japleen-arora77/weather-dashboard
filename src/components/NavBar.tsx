@@ -48,10 +48,10 @@ const NavBar: React.FC<NavBarProps> = ({onSearch}) => {
   } , [isDarkMode]);
 
   return (
-    <div className="container m-5">
-      <div className="row align-items-center">
+    <div className="container-fluid px-4 py-4">
+      <div className="row d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap">
         {/* Search bar */}
-        <div className="col-lg-8 head">
+        <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8 head flex-grow-1 me-3">
           <div className="search-wrap position-relative">
           <InputGroup className="searchbar ">
             <InputGroup.Text className="search-icon">
@@ -94,7 +94,7 @@ const NavBar: React.FC<NavBarProps> = ({onSearch}) => {
         
 
         {/* Light/Dark mode toggle placeholder */}
-        <div className="col-lg-4 head text-end">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 head text-end">
           <button 
             className={`btn toggle-btn head
               ${

@@ -41,10 +41,8 @@
   position: relative;
   transition: background-color 0.3s ease;
   }
-  .toggle-btn .moon,
-.toggle-btn .sun {
+.toggle-btn .moon,.toggle-btn .sun {
   font-size: 1.2rem;
-  /* color: var(--iconColor); */
   z-index: 2;
 }
 .toggle-circle {
@@ -61,7 +59,40 @@
   left: calc(100% - 32px);
   background-color: var(--mainTextColor);
 }
-  .toggle-btn:hover {
-    background-color: var(--iconColor);
+.toggle-btn:hover {
+    background-color: var(--iconColor);  
+}
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
   }
+  .row.d-flex {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap !important;
+    overflow-x: visible !important;
+  }
+  .col-sm-8,.col-sm-4 {
+    flex: 0 1 auto !important; 
+    padding: 0 !important;
+  }
+  .searchbar {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 20px !important;
+    flex: 1 1 auto;
+  }
+  .toggle-btn {
+    flex-shrink: 0;
+    margin-left: 40px;
+    width: 60px;
+    height: 35px;
+  }
+}
+
+
+
+
 
