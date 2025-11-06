@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
     <footer className="footer mt-5">
       <Container className="text-center py-4">
         <p className="footer-text mb-3">
-          Made with <span className="heart">❤️</span> by{" "}
-          <strong>Japleen Arora</strong> |
+          Made by{" "}
+          <strong>Japleen Arora</strong> <span className="heart">🤗</span>|
           <a href="mailto:arorajapleen.cs2277@gmail.com" className="email-link">
             {" "}arorajapleen.cs2277@gmail.com
           </a>
