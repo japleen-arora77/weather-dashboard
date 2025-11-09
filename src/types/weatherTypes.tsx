@@ -8,6 +8,7 @@ export interface weatherData {
     windSpeed:number;
     icon?:string;
     isDay?:boolean;
+    aqi:number;
 }
 
 export interface forecastDay {

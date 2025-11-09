@@ -57,10 +57,10 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                                               ...forecast[0].hour.slice(0, 5 - hourDataList.length),
                                             ]
                                          : hourDataList;
-  // filter the hours from the API based on those 5 hour values
+                                //6 hour values
                                           
                             return filledHourData.map((hourData: any, index: number) => (
-                                 <div className="col-lg-2 show-temperature" key={index}>
+                                 <div className="col-lg-2 col-md-2 col-sm-2 col-sx-2 show-temperature" key={index}>
                                       <p className="sub-head">
                                         {(() => {
                                           const hour = new Date(hourData.time).getHours();
@@ -70,11 +70,6 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                                         })()}
                                      </p>
                                       <p>
-                                        {/* <img
-                                          src={hourData.condition.icon}
-                                          alt={hourData.condition.text}
-                                         width="40"
-                                        /> */}
                                         <h1 style={{ fontSize: "1.4rem" }}>
                                             {getWeatherEmoji(hourData.condition.text, isDay)}
                                         </h1>
@@ -86,6 +81,7 @@ const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
                                 ));
                                 })()}
                                 </div>
+                                {/*further day forecast*/}
                                 <div className="row further-days-forecast p-2 m-2">
                                     <div className="row">
                                         <div className="col-lg-8">

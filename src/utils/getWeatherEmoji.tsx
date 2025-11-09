@@ -11,18 +11,12 @@ export default function getWeatherEmoji(desc: string, isDay: boolean): string {
       return "☁️";
     } else if (lower.includes("mist") || lower.includes("fog") || lower.includes("haze")) {
       return "🌫️";
-    } else if (
-      lower.includes("rain") ||
-      lower.includes("shower") ||
-      lower.includes("drizzle")
+    } else if (lower.includes("rain") || lower.includes("shower") || lower.includes("drizzle")
     ) {
       return "🌧️";
     } else if (lower.includes("thunder") || lower.includes("storm")) {
       return "⛈️";
-    } else if (
-      lower.includes("snow") ||
-      lower.includes("blizzard") ||
-      lower.includes("sleet")
+    } else if (lower.includes("snow") || lower.includes("blizzard") || lower.includes("sleet")
     ) {
       return "❄️";
     } else if (lower.includes("wind") || lower.includes("breeze") || lower.includes("gust")) {
@@ -32,7 +26,7 @@ export default function getWeatherEmoji(desc: string, isDay: boolean): string {
     } else if (lower.includes("smoke") || lower.includes("dust") || lower.includes("sand")) {
       return "🌪️";
     } else {
-      // fallback emoji for unrecognized condition
+      //unrecognized weather condition
       return isDay ? "🌈" : "🌌";
     }
   }

@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import { weatherData, forecastDay } from "../types/weatherTypes";
 import getWeatherEmoji from "../utils/getWeatherEmoji";
+
 const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 const baseURL = "https://api.weatherapi.com/v1/forecast.json";
-
 const getWeather = async (location: string) => {
   try {
     const res = await axios.get(baseURL, {
@@ -28,6 +28,7 @@ const getWeather = async (location: string) => {
       //icon: "https:" + data.current.condition.icon,
       icon: getWeatherEmoji(data.current.condition.text, data.current.is_day === 1),
       isDay: data.current.is_day === 1,
+      aqi: data.current.air_quality["us-epa-index"], 
       
     };
 
