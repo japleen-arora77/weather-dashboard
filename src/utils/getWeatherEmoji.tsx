@@ -4,7 +4,7 @@ export default function getWeatherEmoji(desc: string, isDay: boolean): string {
     const lower = desc.toLowerCase();
   
     if (lower.includes("sunny") || lower.includes("clear")) {
-      return isDay ? "☀️" : "🌙";
+      return isDay ? "☀️" : "🌙"; 
     } else if (lower.includes("partly cloudy")) {
       return isDay ? "🌤️" : "🌥️";
     } else if (lower.includes("cloudy") || lower.includes("overcast")) {

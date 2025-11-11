@@ -70,8 +70,6 @@
   flex: 0 0 50%;
   max-width: 50%;
 }
-
-/* Adjust text and emoji size for smaller screens */
 @media (max-width: 768px) {
   .today-highlight .highlight h3,
   .today-highlight .highlight h4 {
@@ -99,7 +97,6 @@
 .day-length{
     background-color: var(--iconColor);
     border-radius:25px ;
-    
 }
 .today-forecast{
     background: radial-gradient(
@@ -111,6 +108,21 @@
         rgba(18, 26, 45, 0.6) 100%
       );
     border-radius: 25px;
+    display: flex;
+  flex-wrap: nowrap !important; /* Prevent wrapping */
+  overflow-x: auto;             /* Allow smooth scrolling if necessary */
+  scrollbar-width: none;  
+}
+.today-forecast::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on Chrome/Safari */
+}
+.today-forecast .col-lg-2,
+.today-forecast .col-md-2,
+.today-forecast .col-sm-2,
+.today-forecast .col-sx-2 {
+  flex: 1 1 16.66%; /*(100/6=66.6)*/
+  max-width: 16.66%;
+  text-align: center;
 }
 .further-days-forecast{
     background: radial-gradient(
@@ -123,8 +135,71 @@
       );
     border-radius: 25px;
 }
+.further-days-forecast .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap !important; /* Prevent stacking on small screens */
+}
+.further-days-forecast .col-lg-8,
+.further-days-forecast .col-md-8,
+.further-days-forecast .col-sm-8,
+.further-days-forecast .col-xs-8 {
+  flex: 0 0 70%;
+  max-width: 70%;
+}
+.further-days-forecast .col-lg-4,
+.further-days-forecast .col-md-4,
+.further-days-forecast .col-sm-4,
+.further-days-forecast .col-xs-4 {
+  flex: 0 0 30%;
+  max-width: 30%;
+  text-align: right;
+}
 .other-city-data{
     background-color: var(--elemBgColor);
     border-radius: 25px;
 }
+.other-cities .col-lg-6,
+.other-cities .col-md-6,
+.other-cities .col-sm-6,
+.other-cities .col-xs-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+@media (max-width: 576px) {
+  .today-forecast .col-lg-2 p,
+  .today-forecast .col-lg-2 h1 {
+    font-size: 0.8rem !important;
+  }
+
+  .today-forecast .col-lg-2 h1 {
+    font-size: 1.2rem !important;
+  }
+
+  .today-forecast {
+    justify-content: space-between;
+  }
+  .other-cities .other-city-data h4,
+  .other-cities .other-city-data p {
+    font-size: 1rem;
+    margin: 2px;
+  }
+  .other-cities .other-city-data .row {
+    font-size: 0.9rem;
+  }
+  .further-days-forecast .head {
+    font-size: 0.9rem;
+  }
+  .further-days-forecast h4 {
+    font-size: 1rem;
+  }
+  .further-days-forecast h1 {
+    font-size: 1.4rem !important;
+  }
+}
+
+
+
+
 
