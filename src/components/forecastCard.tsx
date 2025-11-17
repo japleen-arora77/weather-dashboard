@@ -99,7 +99,7 @@ const checkIsDay = (timeString: string): boolean => {
                                 ));
                                 })()}
                                 </div>
-                                {/*further day forecast*/}
+                                {/*next day forecast*/}
                                 <div className="row further-days-forecast p-2 m-2">
                                     <div className="row">
                                         <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -108,7 +108,7 @@ const checkIsDay = (timeString: string): boolean => {
                                             <p className="sub-head">{forecast[1]?.desc}</p>
                                         </div>
                                         <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <h1 style={{ fontSize: "2rem" }}>
+                                        <h1 style={{ fontSize: "4rem" }}>
                                             {getWeatherEmoji(forecast[1]?.desc, isDay)}
                                         </h1>
                                         </div>

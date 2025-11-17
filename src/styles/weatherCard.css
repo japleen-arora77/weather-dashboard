@@ -41,14 +41,7 @@
   }
   
 .today-highlight{
-    background: radial-gradient(
-        circle,
-        rgba(22, 40, 80, 0.6) 0%,
-        rgba(22, 39, 77, 0.6) 0%,
-        rgba(22, 39, 76, 0.6) 7%,
-        rgba(21, 38, 74, 0.6) 17%,
-        rgba(18, 26, 45, 0.6) 100%
-      );
+  background: var(--gradientBg);
     border-radius: 40px;
 }
 .highlight{
@@ -99,14 +92,7 @@
     border-radius:25px ;
 }
 .today-forecast{
-    background: radial-gradient(
-        circle,
-        rgba(22, 40, 80, 0.6) 0%,
-        rgba(22, 39, 77, 0.6) 0%,
-        rgba(22, 39, 76, 0.6) 7%,
-        rgba(21, 38, 74, 0.6) 17%,
-        rgba(18, 26, 45, 0.6) 100%
-      );
+  background: var(--gradientBg);
     border-radius: 25px;
     display: flex;
   flex-wrap: nowrap !important; /* Prevent wrapping */
@@ -125,14 +111,7 @@
   text-align: center;
 }
 .further-days-forecast{
-    background: radial-gradient(
-        circle,
-        rgba(22, 40, 80, 0.6) 0%,
-        rgba(22, 39, 77, 0.6) 0%,
-        rgba(22, 39, 76, 0.6) 7%,
-        rgba(21, 38, 74, 0.6) 17%,
-        rgba(18, 26, 45, 0.6) 100%
-      );
+    background: var(--gradientBg);
     border-radius: 25px;
 }
 .further-days-forecast .row {
@@ -195,7 +174,7 @@
     font-size: 1rem;
   }
   .further-days-forecast h1 {
-    font-size: 1.4rem !important;
+    font-size: 3rem !important;
   }
 }
 

@@ -1,21 +1,5 @@
 import '../styles/weatherCard.css';
 import  {weatherData}  from '../types/weatherTypes';
-const getAQIText = (aqi: number): string => {
-  switch (aqi) {
-    case 1:
-      return "Good 🟢";
-    case 2:
-      return "Fair 🟡";
-    case 3:
-      return "Moderate 🟠";
-    case 4:
-      return "Poor 🔴";
-    case 5:
-      return "Very Poor 🟣";
-    default:
-      return "N/A";
-  }
-};
 
 interface WeatherCardProps {
     data: weatherData;
@@ -38,7 +22,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({data}) => {
                                         <p className="sub-head">{data.desc}</p>
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-6 col-sx-6 d-flex align-items-center justify-content-center">
-                            <div className="icon-type" style={{ fontSize: '80px' }}>
+                            <div className="icon-type" style={{ fontSize: '6rem' }}>
                                 {data.icon}<br/>
                                 {/*AQI solve this afterwards*/}
                                 {/* <div className="aqi mt-3 text-center">

@@ -4,6 +4,14 @@
     --extraTextColor:#f5ebeb; 
     --elemBgColor:#202d4a;
     --iconColor:#8d3efa;
+    --gradientBg: radial-gradient(
+        circle,
+        rgba(22, 40, 80, 0.6) 0%,
+        rgba(22, 39, 77, 0.6) 0%,
+        rgba(22, 39, 76, 0.6) 7%,
+        rgba(21, 38, 74, 0.6) 17%,
+        rgba(18, 26, 45, 0.6) 100%
+    );
 }
 body.light-mode {
     --bgColor: #ddddf5; 
@@ -11,4 +19,12 @@ body.light-mode {
     --extraTextColor: #2f2f3b;
     --elemBgColor: #d0d0f8;
     --iconColor:#8bcaf7;
-  }
+    --gradientBg:radial-gradient(
+        circle,
+        rgba(215, 225, 255, 0.9) 0%,   
+        rgba(210, 220, 255, 0.9) 25%,  /* gentle lavender tone */
+        rgba(200, 210, 255, 0.85) 50%, /* subtle blend with bg */
+        rgba(190, 200, 250, 0.8) 75%,  /* slightly deeper edge */
+        rgba(180, 190, 245, 0.75) 100% /* complements --elemBgColor */
+      );
+}
