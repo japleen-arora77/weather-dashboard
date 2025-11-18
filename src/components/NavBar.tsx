@@ -66,11 +66,12 @@ interface NavBarProps {
   }, [isDarkMode]);
   
   return ( 
-    <div className="container-fluid px-4 py-4">
+    <div className="container-fluid px-4 py-4 " >
       <div className="row d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap">
         {/* Search bar */}
-        <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8 head flex-grow-1 me-3">
-        <div className="search-wrap position-relative" ref={wrapperRef}>
+        <div className="col-lg-8 col-md-8 col-sm-8 col-xs-8 head flex-grow-1 me-3" data-aos="fade-down"
+data-aos-duration="800">
+        <div className="search-wrapper position-relative" ref={wrapperRef}>
           <InputGroup className="searchbar ">
             <InputGroup.Text className="search-icon">
             <i className="bi bi-search"></i>
@@ -81,11 +82,11 @@ interface NavBarProps {
               value={searchItem}
               onChange={handleSearchChange}
               onKeyDown={handleKeyPress}
-              className="search-input"
+              className="search-input" 
             />
           </InputGroup> 
           {showDropdown && (
-        <ListGroup className="suggestion-dropdown shadow-sm ">
+        <ListGroup className="suggestion-dropdown dropdown-anim shadow-sm " style={{ zIndex: 1000 }}>
           {searchSuggestions.length > 0 ? (
             searchSuggestions.map((city: any, index) => (
               <ListGroup.Item
@@ -108,7 +109,8 @@ interface NavBarProps {
           </div>
         </div>
         {/* Light/Dark mode toggle placeholder */}
-        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 head text-end">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 head text-end" data-aos="fade-down"
+data-aos-duration="800">
           <button 
             className={`btn toggle-btn head
               ${

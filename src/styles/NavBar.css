@@ -1,10 +1,9 @@
-
 .searchbar {
-    background-color: var(--elemBgColor); /* dark background */
-    border-radius: 40px;
-    overflow: hidden;
-    max-width: 500px;
-    margin: 0 auto;
+  background-color: var(--elemBgColor);
+  border-radius: 40px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
   }
 .search-icon {
     background: transparent;
@@ -78,12 +77,6 @@
     flex: 0 1 auto !important; 
     padding: 0 !important;
   }
-  .searchbar {
-    max-width: 100% !important;
-    width: 100% !important;
-    margin-left: 20px !important;
-    flex: 1 1 auto;
-  }
   .toggle-btn {
     flex-shrink: 0;
     margin-left: 40px;
@@ -94,8 +87,10 @@
 .search-wrapper {
   position: relative;
   display: inline-block;
+  width: 100%;
+  max-width: 500px;   /* matches searchbar width */
+  margin: 0 auto;
 }
-
 .suggestion-dropdown {
   position: absolute;
   top: 48px;                   /* right under search bar */
@@ -106,8 +101,7 @@
   border: 1px solid var(--iconColor);
   overflow: hidden;
   z-index: 50;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.25);  /* google dropdown shadow */
-  
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.25);  /* google dropdown shadow */ 
 }
 .suggestion-dropdown .list-group-item {
   background-color: var(--elemBgColor);
@@ -120,3 +114,16 @@
 .suggestion-dropdown .list-group-item:hover {
   background-color: var(--iconColor);
 }
+/* Smooth dropdown opening animation */
+.dropdown-anim {
+  opacity: 0;
+  transform: translateY(-8px); 
+  animation: dropdownFade 0.5s ease forwards;
+}
+@keyframes dropdownFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

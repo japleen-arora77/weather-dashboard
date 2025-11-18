@@ -6,7 +6,7 @@ import getWeatherEmoji from "../utils/getWeatherEmoji";
 interface ForecastProps{ 
     forecast : forecastDay[];
 }
-const otherCities=["Vancouver","Melbourne","Delhi","Bangalore","Pune","Jaipur" ];
+const otherCities=["Vancouver","Melbourne","Hyderabad","Bangalore","Pune","Jaipur" ];
 const ForecastCard: React.FC<ForecastProps> = ({forecast}) => {
     const [otherCitiesWeather, setOtherCitiesWeather] = useState<weatherData[]>([]);
     const [loadingCities, setLoadingCities] = useState(true);
@@ -49,9 +49,9 @@ const checkIsDay = (timeString: string): boolean => {
             <div className="forecast-card-body p-4">
                 <div className="row gx-5 g-4">
                     <div className="col-lg-7 p-0">
-                        <div className="forecast p-4">
+                        <div className="forecast p-4" data-aos="fade-left">
                         <div className="row p-4">
-                            <div className="col-lg-8 text-start">
+                            <div className="col-lg-8 text-start" >
                                 <h3 className="h3-type head">Today/Tomorrow</h3>
                                 <br/>
                                 <div className="row today-forecast p-2 m-2">
@@ -128,8 +128,8 @@ const checkIsDay = (timeString: string): boolean => {
                         </div>
                         </div>
                     </div>
-                    <div className="col-lg-5 text-start">
-                    <div className="other-cities p-4">   
+                    <div className="col-lg-5 text-start" >
+                    <div className="other-cities p-4" data-aos="fade-left">   
                     <h3 className="h3-type head">Other Cities</h3>
                     {loadingCities ? (
                      <p className="sub-head">Loading cities....</p>

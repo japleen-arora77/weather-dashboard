@@ -11,7 +11,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({data}) => {
             <div className="weather-card-body p-4 ">
                 <div className="row gx-5 g-4">
                     <div className="col-lg-7 p-0">
-                        <div className='today-weather p-4'>
+                        <div className='today-weather p-4' data-aos="fade-right">
                         <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-6 col-sx-6 text-start">
                                         <p className="sub-head city-name btn"><i className="bi bi-geo-alt-fill"> </i>{data.city}</p>
@@ -36,17 +36,17 @@ const WeatherCard: React.FC<WeatherCardProps> = ({data}) => {
                         </div>
                     </div>
                     <div className="col-lg-5  text-start">
-                    <div className='today-highlight p-4'>
+                    <div className='today-highlight p-4' data-aos="fade-left">
                         <h3 className="h3-type head">Today's Highlight</h3>
                     <div className="row p-3">
                       <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div className="head highlight p-3">
+                        <div className="head highlight p-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
                             <div className='row'>Chance of Rain</div><br/>
                             <h4>{data.rainChance}% 🌧️</h4>
                         </div>
                       </div>
                       <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div className="head highlight p-3">
+                        <div className="head highlight p-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
                             <div className='row'>UV Index</div><br/>
                             <h4>{data.uvIdx} 🔆</h4>
                         </div>
@@ -54,13 +54,13 @@ const WeatherCard: React.FC<WeatherCardProps> = ({data}) => {
                     </div>
                     <div className="row p-3">
                       <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div className="head highlight p-3">
+                        <div className="head highlight p-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
                             <div className='row'>Wind Speed</div><br/>
                             <h4>{Math.round(data.windSpeed)}km/h🍃</h4>
                         </div>
                       </div>
                       <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div className="head highlight p-3">
+                        <div className="head highlight p-3" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
                             <div className='row'>Humidity</div><br/>
                             <h4>{data.humidity}% 💧</h4>
                         </div>

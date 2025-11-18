@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 
 const Footer: React.FC = () => { 
   return (
-    <footer className="footer mt-5">
+    <footer className="footer mt-5" data-aos="fade-up" data-aos-duration="700">
       <Container className="text-center py-4">
         <p className="footer-text mb-3">
           Made by{" "}
