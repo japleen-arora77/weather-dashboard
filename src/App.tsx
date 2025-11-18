@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="main-page text-center ">
       <NavBar onSearch={(city)=>setLocation(city)}/>
-      <h1 className='h1-type head' data-aos="zoom-in">🌤️ Weather Dashboard</h1>
+      <h1 className='h1-type head' data-aos="zoom-in">⛅ClimaCheck</h1>
       <p className="sub-head" data-aos="zoom-in">Last updated: {new Date().toLocaleString()}</p>
       {weather && <WeatherCard data={weather} />}
       {forecast.length > 0 && <ForecastCard forecast={forecast} />}
